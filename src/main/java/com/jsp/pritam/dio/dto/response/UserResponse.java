@@ -1,16 +1,23 @@
 package com.jsp.pritam.dio.dto.response;
 
-import java.time.LocalDate;
+import com.jsp.pritam.dio.enums.UserRole;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
 public class UserResponse {
 
-    private long userId;
+    private long userid;
 
     private String username;
 
-    private String userRole;
+    private UserRole userrole;
 
-    private LocalDate createAt;
+    private LocalDateTime createdat;
 
-    private LocalDate lastModifiedAt;
+    private LocalDateTime lastmodifiedat;
 }
