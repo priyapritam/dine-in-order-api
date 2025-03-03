@@ -1,10 +1,11 @@
 package com.jsp.pritam.dio.utility;
 
-import lombok.Builder;
+
 import lombok.Getter;
+import lombok.experimental.SuperBuilder;
 
 @Getter
-@Builder
+@SuperBuilder
 public class SimpleErrorResponse {
 
     private String type;
