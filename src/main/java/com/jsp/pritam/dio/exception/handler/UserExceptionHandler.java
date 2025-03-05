@@ -11,9 +11,17 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class UserExceptionHandler {
 
+    /**
+     * Handles the {@link UserNotFoundByIdException} by returning a standardized error response.
+     * This method is invoked when a {@link UserNotFoundByIdException} is thrown in the application,
+     * providing a "Not Found" HTTP response with an appropriate error message.
+     *
+     * @param exception the exception instance containing details about the user not found error
+     * @return a {@link ResponseEntity} containing a {@link SimpleErrorResponse} with a 404 status and error message
+     */
     @ExceptionHandler(UserNotFoundByIdException.class)
     public ResponseEntity<SimpleErrorResponse> handleUserNotFoundByIdException(UserNotFoundByIdException exception) {
-        return ResponseBuilder.error(HttpStatus.NOT_FOUND, exception.getMessage());
+        return ResponseBuilder.notFound(exception.getMessage());
     }
 }
 //    @ExceptionHandler(UserNotFoundByIdException.class)

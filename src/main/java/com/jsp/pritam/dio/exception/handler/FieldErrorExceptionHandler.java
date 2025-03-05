@@ -34,6 +34,7 @@ public class FieldErrorExceptionHandler extends ResponseEntityExceptionHandler {
             }
         }
 
+
         FieldErrorResponse fieldErrorResponse = FieldErrorResponse.builder()
                 .type(status.toString())
                 .status(status.value())

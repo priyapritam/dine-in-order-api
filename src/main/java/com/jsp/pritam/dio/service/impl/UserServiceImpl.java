@@ -29,6 +29,13 @@ public class UserServiceImpl implements UserService {
         return userMapper.mapToUserResponse(userRepository.save(user));
     }
 
+    /**
+     * Creates a new user instance based on the provided role.
+     *
+     * @param role the role of the user to be created, determining the user type (ADMIN or STAFF)
+     * @return a newly created user instance of type {@code Admin} or {@code Staff} based on the role
+     * @throws RuntimeException if the specified role is invalid or unsupported
+     */
     private User createUserByRole (UserRole role){
         User user2;
         switch (role){
